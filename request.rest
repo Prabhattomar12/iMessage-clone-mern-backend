@@ -1,0 +1,37 @@
+GET http://localhost:9000
+
+###
+
+POST http://localhost:9000/add/newGroup
+Content-Type: application/json
+
+{
+    "groupName": "group1"
+}
+
+###
+
+GET http://localhost:9000/groups
+
+
+###
+
+POST http://localhost:9000/add/newMessage?id=60d032abafa17b15b8adbb25
+
+Content-Type: application/json
+
+{
+    "message": "{{$randomAdjective}}",
+     "timestamp": "{{$randomDateRecent}}",
+     "user" : {
+         "uid": "{{$guid}}",
+         "username": "{{{$randomUserName}}",
+         "avatar": "{{$randomAvatarImage}}",
+         "email": "{{$randomEmail}}"
+     }
+
+}
+
+###
+
+GET http://localhost:9000/group/messages/60d19ac26dd1142da3b19fe8
